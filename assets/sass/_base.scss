@@ -1,0 +1,17 @@
+/*
+Base element settings (no classes or id's).
+
+@since 1.0.0
+*/
+
+@import "settings";
+
+a {
+  &.color-invert {
+    color: inherit;
+
+    &:hover {
+      color: $anchor-font-color-hover;
+    }
+  }
+}

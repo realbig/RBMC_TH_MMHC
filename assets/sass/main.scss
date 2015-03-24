@@ -1,0 +1,38 @@
+/*!
+Theme Name: Mid-Michigan Health Center
+Description: Custom theme designed for Mid-Michigan Health Center by Real Big Marketing.
+Author: Joel Worsham
+Author URI: http://realbigmarketing.com/about/#staff
+Version: 1.0.0
+*/
+
+// Vendor
+@import "../vendor/css/normalize";
+@import "../vendor/css/icons-mmhc";
+
+// Deps
+@import "settings.scss";
+
+// Foundation
+// Here we control all of the various foundation components to use
+//@import "../vendor/sass/foundation/components/visibility";
+//@import "../vendor/sass/foundation/components/clearing";
+//@import "../vendor/sass/foundation/components/forms";
+@import "../vendor/sass/foundation/components/grid";
+@import "../vendor/sass/foundation/components/buttons";
+@import "../vendor/sass/foundation/components/type";
+
+// Setup
+@import "base";
+
+// Static
+@import "static/header";
+@import "static/footer";
+
+// Templates
+@import "templates/single-post";
+@import "templates/page";
+@import "templates/common";
+
+// Overrides
+@import "wp";

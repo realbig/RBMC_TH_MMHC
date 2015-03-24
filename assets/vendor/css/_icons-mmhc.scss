@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Flaticon";
+  src: url("assets/vendor/fonts/mmhc/mmhc.eot");
+  src: url("assets/vendor/fonts/mmhc/mmhc.eot#iefix") format("embedded-opentype"),
+  url("assets/vendor/fonts/mmhc/mmhc.woff") format("woff"),
+  url("assets/vendor/fonts/mmhc/mmhc.ttf") format("truetype"),
+  url("assets/vendor/fonts/mmhc/mmhc.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: "Flaticon", arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  margin-left: 20px;
+}.flaticon-calendar68:before {
+   content: "\e000";
+ }
+.flaticon-health3:before {
+  content: "\e001";
+}
+.flaticon-heart258:before {
+  content: "\e002";
+}
+.flaticon-heart8:before {
+  content: "\e003";
+}
+.flaticon-iphone26:before {
+  content: "\e004";
+}
+.flaticon-paper6:before {
+  content: "\e005";
+}
+.flaticon-person289:before {
+  content: "\e006";
+}
+.flaticon-positive3:before {
+  content: "\e007";
+}
