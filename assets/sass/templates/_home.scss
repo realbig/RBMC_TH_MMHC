@@ -1,0 +1,59 @@
+/*
+Styles front-page.php, the home page.
+
+@since 1.0.0
+*/
+
+@import "../settings";
+
+body.home {
+
+  .home-section {
+    padding-top: $gutter * 4;
+    padding-bottom: $gutter * 4;
+  }
+
+  // Welcome (CTA)
+  .home-welcome {
+    background: $primary-color;
+    color: $light-color;
+    position: relative;
+
+    .home-welcome-blurb {
+      position: relative;
+
+      .home-welcome-title {
+        color: inherit;
+        line-height: 1;
+        font-size: 2em;
+        margin-bottom: 1em;
+      }
+
+      .home-welcome-copy {
+        font-size: 1.2em;
+
+        p {
+          font-size: inherit;
+        }
+      }
+    }
+  }
+
+  // Features
+  .home-features {
+    .home-feature-title {
+      color: $primary-color;
+      margin: 0.5em 0;
+    }
+  }
+
+  // About Us
+  .home-about {
+    background: $primary-color;
+    color: $light-color;
+
+    .home-about-title {
+      color: inherit;
+    }
+  }
+}

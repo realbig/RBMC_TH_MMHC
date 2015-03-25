@@ -8,19 +8,20 @@ throughout this theme's SASS files.
 @import "../vendor/sass/foundation/functions";
 
 // We use these as default colors throughout
-$primary-color: #a8c7e9;
-$secondary-color: #f8abad;
+$primary-color: #336699;
+$secondary-color: #5AA4EE;
 $alert-color: #f04124;
 $success-color: #43AC6A;
 $warning-color: #f08a24;
 $info-color: #a0d3e8;
 
 // Extra colors
-$third-color: #92d0a7;
-$fourth-color: #ffdaaf;
+$dark-color: #333;
+$medium-color: #aaa;
+$light-color: #fff;
 
 // We use these to define default font stacks
-$font-family-sans-serif: "Helvetica", sans-serif;
+$font-family-sans-serif: "PT Sans", sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 $body-font-color: #222;
@@ -28,9 +29,10 @@ $body-font-color: #222;
 // Sizes
 $header-height: 80px;
 $gutter: 30px;
+$page-gutter: 10px;
 
 // We use these to control header font styles
-$header-font-family: $font-family-sans-serif;
+$header-font-family: "Oswald", arial, sans-serif;
 $header-line-height: 1.4;
 $header-top-margin: .2rem;
 $header-bottom-margin: .5rem;

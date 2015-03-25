@@ -14,6 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <!-- Footer HTML -->
 
+<?php // #site-content ?>
+</section>
+
 <?php // #wrapper ?>
 </div>
 

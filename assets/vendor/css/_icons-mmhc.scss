@@ -8,33 +8,35 @@
   font-weight: normal;
   font-style: normal;
 }
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+[class^="mmhcicon-"]:before, [class*=" mmhcicon-"]:before,
+[class^="mmhcicon-"]:after, [class*=" mmhcicon-"]:after {
   font-family: "Flaticon", arial, sans-serif;
-  font-size: 20px;
+  font-size: inherit;
   font-style: normal;
-  margin-left: 20px;
-}.flaticon-calendar68:before {
+}.mmhcicon-calendar68:before {
    content: "\e000";
  }
-.flaticon-health3:before {
+.mmhcicon-health3:before {
   content: "\e001";
 }
-.flaticon-heart258:before {
+.mmhcicon-heart258:before {
   content: "\e002";
 }
-.flaticon-heart8:before {
+.mmhcicon-heart8:before {
   content: "\e003";
 }
-.flaticon-iphone26:before {
+.mmhcicon-iphone26:before {
   content: "\e004";
 }
-.flaticon-paper6:before {
+.mmhcicon-magnifier13:before {
   content: "\e005";
 }
-.flaticon-person289:before {
+.mmhcicon-paper6:before {
+  content: "\e005";
+}
+.mmhcicon-person289:before {
   content: "\e006";
 }
-.flaticon-positive3:before {
+.mmhcicon-positive3:before {
   content: "\e007";
 }

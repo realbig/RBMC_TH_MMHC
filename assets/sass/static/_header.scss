@@ -5,6 +5,97 @@ The static site header.
 */
 
 @import "../settings";
+@import "../../vendor/sass/foundation/components/forms";
 
 #site-header {
+
+  // Top area
+  .header-top {
+    padding-top: ($column-gutter / 2);
+
+    .left {
+      float: left;
+    }
+
+    .right {
+      float: right;
+      text-align: right;
+
+      .line {
+        @extend p;
+        @extend .clearfix;
+        margin-bottom: 5px;
+      }
+
+      .top-nav {
+        float: right;
+
+        .menu {
+          list-style: none;
+          margin: 0;
+        }
+
+        .menu-item {
+          display: inline-block;
+          margin: 0 5px;
+
+          // Based of of input height, so they are vertically centered
+          line-height: ($input-font-size + ($form-spacing * 1.5) - rem-calc(1));
+        }
+      }
+
+      .search {
+        float: right;
+        margin-left: 10px;
+        width: 250px;
+
+        input[type="search"] {
+          margin: 0;
+        }
+      }
+
+      .phone, .hours {
+        color: $secondary-color;
+        margin-bottom: 5px;
+      }
+
+      .phone {
+        font-size: 1.5em;
+
+        [class*="mmhcicon"] {
+          color: $medium-color;
+        }
+      }
+    }
+  }
+}
+
+// Primary nav
+#site-nav {
+  background: $secondary-color;
+  color: $light-color;
+
+  .menu {
+    list-style: none;
+    margin: 0;
+
+    .menu-item {
+      float: left;
+      line-height: 60px;
+      font-size: 1.5em;
+      background: $secondary-color;
+      transition: background 500ms;
+      text-align: center;
+
+      &:hover {
+        background: darken($secondary-color, 5%);
+        transition: background 150ms;
+      }
+
+      a {
+        color: inherit;
+        display: block;
+      }
+    }
+  }
 }

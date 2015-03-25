@@ -32,4 +32,68 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="wrapper">
 
-	<!-- Header HTML -->
+	<header id="site-header">
+
+		<div class="header-top row">
+			<div class="columns small-12">
+
+				<div class="site-logo left">
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png" width="300"
+					     height="95"/>
+				</div>
+
+				<div class="right">
+
+					<div class="line">
+						<div class="search">
+							<?php get_search_form(); ?>
+						</div>
+
+						<nav class="top-nav">
+							<?php
+							wp_nav_menu( array(
+								'theme_location' => 'top',
+								'container'      => false,
+							) );
+							?>
+						</nav>
+					</div>
+
+					<p class="phone">
+						<?php echo wp_is_mobile() ? '<a href="tel:' . _mmhc_sc_phone() . '">' : ''; ?>
+						<span class="mmhcicon-iphone26"></span><?php echo _mmhc_sc_phone(); ?>
+						<?php echo wp_is_mobile() ? '</a>' : ''; ?>
+					</p>
+
+					<p class="hours">
+						<?php echo _mmhc_sc_hours_condensed(); ?>
+					</p>
+				</div>
+
+			</div>
+		</div>
+
+		<nav id="site-nav">
+			<div class="row">
+				<div class="columns small-12">
+
+					<?php
+					global $_mmhc_primary_nav_count;
+					$primary_nav = wp_get_nav_menu_object( 'primary' );
+					$_mmhc_primary_nav_count = $primary_nav->count;
+
+					require_once __DIR__ . '/includes/primary-nav-walker.php';
+
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'container'      => false,
+						'walker' => new MMHC_Walker_PrimaryNav,
+					) );
+					?>
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<section id="site-content">

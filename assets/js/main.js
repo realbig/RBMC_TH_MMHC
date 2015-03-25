@@ -7,6 +7,17 @@
 (function ($) {
     'use strict';
 
-    //$(document).foundation();
+    $(document).foundation();
+
+    // Account for no transforms
+    if (!Modernizr.csstransforms) {
+
+        // Vertically centered items
+        $('.vertical-center').children().each(function () {
+            $(this).css({
+                marginTop: $(this).height() / 2 * -1
+            });
+        });
+    }
 
 })(jQuery);

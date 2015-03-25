@@ -78,6 +78,15 @@ add_action( 'init', function () {
 		true
 	);
 
+	// Admin script
+	wp_register_script(
+		THEME_ID . '-admin',
+		get_template_directory_uri() . '/admin.js',
+		array( 'jquery' ),
+		defined( 'WP_DEBUG' ) && WP_DEBUG ? time() : THEME_VERSION,
+		true
+	);
+
 	// Theme fonts
 	if ( ! empty( $theme_fonts ) ) {
 		foreach ( $theme_fonts as $ID => $link ) {
@@ -113,12 +122,40 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 /**
+ * Enqueue admin files.
+ *
+ * @since 1.0.0
+ */
+add_action( 'admin_enqueue_scripts', function () {
+
+	global $theme_fonts;
+
+	// Admin script
+	wp_enqueue_script( THEME_ID . '-admin' );
+
+	// For image widget
+	if ( get_current_screen()->base == 'widgets' ) {
+		wp_enqueue_media();
+	}
+
+	// Theme fonts
+	if ( ! empty( $theme_fonts ) ) {
+		foreach ( $theme_fonts as $ID => $link ) {
+			wp_enqueue_style( THEME_ID . "-font-$ID" );
+		}
+	}
+} );
+
+/**
  * Register nav menus.
  *
  * @since 1.0.0
  */
 add_action( 'after_setup_theme', function () {
-	register_nav_menu( 'primary', 'Primary Menu' );
+
+	register_nav_menu( 'primary', 'Primary' );
+	register_nav_menu( 'top', 'Top' );
+	register_nav_menu( 'footer', 'Footer' );
 } );
 
 /**
@@ -136,7 +173,37 @@ add_action( 'widgets_init', function () {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	));
+
+	// Home Features
+	register_sidebar( array(
+		'name' => 'Home Features',
+		'id' => 'home-features',
+		'description' => 'Displays on the home page.',
+	));
+
+	// Home About
+	register_sidebar( array(
+		'name' => 'Home About Image',
+		'id' => 'home-about',
+		'description' => 'Displays on the home page about us section.',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	));
 } );
 
 // Include other static files
-require_once __DIR__ . '/shortcodes.php';
+require_once __DIR__ . '/admin/admin.php';
+
+// Widgets
+require_once __DIR__ . '/includes/widgets/image.php';
+require_once __DIR__ . '/includes/widgets/text-icon.php';
+require_once __DIR__ . '/includes/widgets/home-feature.php';
+
+// Shortcodes
+require_once __DIR__ . '/includes/shortcodes/hours-office.php';
+require_once __DIR__ . '/includes/shortcodes/hours-lab.php';
+require_once __DIR__ . '/includes/shortcodes/hours-condensed.php';
+require_once __DIR__ . '/includes/shortcodes/phone.php';
+require_once __DIR__ . '/includes/shortcodes/fax.php';
