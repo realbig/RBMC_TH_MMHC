@@ -49,7 +49,7 @@ class MMHC_Widget_Image extends WP_Widget {
 
 		if ( $image_ID !== false ) {
 			?>
-			<div class="img-holder" data-image="<?php echo wp_get_attachment_image_src( $image_ID, 'full' )[0]; ?>"
+			<div class="img-holder" data-image="<?php $image = wp_get_attachment_image_src( $image_ID, 'full' ); echo $image[0]; ?>"
 			     data-cover-ratio="0.4"></div>
 			<?php
 		}

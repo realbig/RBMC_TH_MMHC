@@ -1,0 +1,14 @@
+/*
+The search results page.
+
+@since 1.0.0
+*/
+
+@import "../settings";
+
+.relevanssi-query-term {
+  display: inline-block;
+  background: $secondary-color;
+  color: $light-color;
+  padding: 0 0.25em;
+}

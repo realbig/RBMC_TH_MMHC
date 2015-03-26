@@ -2,7 +2,7 @@
 /**
  * The theme's index file used for displaying an archive of blog posts.
  *
- * @since 1.0.0
+ * @since   1.0.0
  * @package MMHC
  */
 
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-	<div class="posts row">
+	<div class="search-results row">
 
 		<?php
 		if ( have_posts() ) :
@@ -40,7 +40,7 @@ get_header();
 			endwhile;
 		else: ?>
 			<p>
-				No posts found.
+				No search results found.
 			</p>
 		<?php endif; ?>
 

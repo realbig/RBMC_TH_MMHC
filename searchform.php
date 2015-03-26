@@ -25,7 +25,8 @@ if ( isset( $mmhc_search_options['input_id'] ) && $mmhc_search_options['input_id
 		<span class="screen-reader-text">Search for:</span>
 
 		<div class="columns small-10">
-			<input type="text" class="search-field" value="Search this site" name="s" <?php echo $id; ?>
+			<input type="text" class="search-field" <?php echo $id; ?>
+			       value="<?php echo isset( $_GET['s'] ) ? $_GET['s'] : 'Search this site'; ?>" name="s"
 			       title="Search for:">
 		</div>
 

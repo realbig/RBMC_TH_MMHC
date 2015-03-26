@@ -3854,6 +3854,26 @@ body.home .home-about {
       margin: 0; }
 
 /*
+The search results page.
+
+@since 1.0.0
+*/
+/*
+Sets up the theme's styling properties and makes some variables already set in Foundation available for easy use
+throughout this theme's SASS files.
+
+@since 1.0.0
+*/
+/*
+ * Mixins
+ */
+.relevanssi-query-term {
+  display: inline-block;
+  background: #5AA4EE;
+  color: #fff;
+  padding: 0 0.25em; }
+
+/*
 The static site header.
 
 @since 1.0.0
@@ -3869,6 +3889,8 @@ throughout this theme's SASS files.
  */
 .search-form .postfix {
   color: #aaa; }
+.search-form input[type="text"] {
+  margin-bottom: 0; }
 
 /*
 This provides overrides for some WP stuff (not much at all).
