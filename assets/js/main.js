@@ -23,4 +23,10 @@
     // Parallax images
     $('.img-holder').imageScroll();
 
+    // Focus search form
+    window['mmhc_focus_search'] = function (id) {
+        $('#' + id).focus();
+        return false;
+    };
+
 })(jQuery);

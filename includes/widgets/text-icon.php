@@ -41,15 +41,20 @@ class MMHC_Widget_TextIcon extends WP_Widget {
 		echo $args['before_widget'];
 
 		if ( ! empty( $instance['title'] ) ) {
-			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
-		}
 
-		if ( ! empty( $instance['icon'] ) ) {
-			?>
-			<div class="mmhc-widget-icon icon-effect-small-light">
-				<span class="flaticon-<?php echo $instance['icon']; ?>"></span>
-			</div>
-			<?php
+			echo $args['before_title'];
+
+			if ( ! empty( $instance['icon'] ) ) {
+				?>
+				<span class="mmhc-widget-icon icon-effect-small-light">
+					<span class="flaticon-<?php echo $instance['icon']; ?>"></span>
+				</span>
+				<?php
+			}
+
+			echo apply_filters( 'widget_title', $instance['title'] );
+
+			echo $args['after_title'];
 		}
 
 		if ( ! empty( $instance['text'] ) ) {

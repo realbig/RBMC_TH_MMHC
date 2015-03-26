@@ -3577,7 +3577,11 @@ throughout this theme's SASS files.
       font-size: 1.2em;
       background: #5AA4EE;
       transition: background 500ms;
-      text-align: center; }
+      text-align: center;
+      white-space: nowrap; }
+      @media only screen and (min-width:40.063em) and (max-width:64em) {
+        #site-nav .menu .menu-item {
+          font-size: 1em; } }
       @media only screen and (max-width: 40em) {
         #site-nav .menu .menu-item {
           display: block;
@@ -3665,13 +3669,9 @@ throughout this theme's SASS files.
   position: relative; }
   #site-sidebar .widget_mmhc_texticon .widget-title {
     color: inherit;
-    font-size: 1.2em;
-    text-align: center;
-    margin-bottom: 30px; }
+    font-size: 1.2em; }
   #site-sidebar .widget_mmhc_texticon .mmhc-widget-icon {
-    position: absolute;
-    top: 15px;
-    left: 15px; }
+    margin-right: 0.2em; }
 
 /*
 The static site content.
@@ -3710,7 +3710,11 @@ throughout this theme's SASS files.
   z-index: 1;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
-  .page-content a {
+  .page-content ul {
+    margin-left: 3em; }
+    .page-content ul ul {
+      margin-left: 1em; }
+  .page-content a:not(.button) {
     outline: none;
     text-decoration: none;
     white-space: nowrap;
@@ -3722,7 +3726,7 @@ throughout this theme's SASS files.
     font-weight: bold;
     transition: -webkit-transform 300ms;
     transition: transform 300ms; }
-    .page-content a:before, .page-content a:after {
+    .page-content a:not(.button):before, .page-content a:not(.button):after {
       pointer-events: none;
       -webkit-backface-visibility: hidden;
               backface-visibility: hidden;
@@ -3734,21 +3738,21 @@ throughout this theme's SASS files.
       font-weight: normal;
       transition: opacity 200ms, -webkit-transform 200ms;
       transition: opacity 200ms, transform 200ms; }
-    .page-content a:before {
+    .page-content a:not(.button):before {
       left: -0.08em;
       content: '[';
       -webkit-transform: translateX(-100%);
           -ms-transform: translateX(-100%);
               transform: translateX(-100%); }
-    .page-content a:after {
+    .page-content a:not(.button):after {
       right: -0.08em;
       content: ']';
       -webkit-transform: translateX(100%);
           -ms-transform: translateX(100%);
               transform: translateX(100%); }
-    .page-content a:hover {
+    .page-content a:not(.button):hover {
       color: #5AA4EE; }
-      .page-content a:hover:before, .page-content a:hover:after {
+      .page-content a:not(.button):hover:before, .page-content a:not(.button):hover:after {
         opacity: 1;
         -webkit-transform: translateX(0);
             -ms-transform: translateX(0);

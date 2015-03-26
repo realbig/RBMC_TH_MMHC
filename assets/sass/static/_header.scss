@@ -225,6 +225,11 @@ The static site header.
       background: $secondary-color;
       transition: background 500ms;
       text-align: center;
+      white-space: nowrap;
+
+      @media #{$medium-only} {
+        font-size: 1em;
+      }
 
       @media #{$small-only} {
         display: block;

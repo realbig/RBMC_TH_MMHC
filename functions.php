@@ -156,6 +156,7 @@ add_action( 'after_setup_theme', function () {
 	register_nav_menu( 'primary', 'Primary' );
 	register_nav_menu( 'top', 'Top' );
 	register_nav_menu( 'footer', 'Footer' );
+	register_nav_menu( 'error_404', '404 Page' );
 } );
 
 /**

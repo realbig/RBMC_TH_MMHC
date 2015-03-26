@@ -48,7 +48,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 					<div class="line hide-for-small-only">
 						<div class="search">
-							<?php get_search_form(); ?>
+							<?php
+							global $mmhc_search_options;
+							$mmhc_search_options = array(
+								'input_id' => 'header-search-input',
+							);
+							get_search_form();
+							?>
 						</div>
 
 						<nav class="top-nav">

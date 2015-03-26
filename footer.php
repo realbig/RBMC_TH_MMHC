@@ -35,15 +35,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="footer-lower">
 		<div class="row">
 			<div class="text-center columns small-12">
-				Built by <a href="http://realbigmarketing.com" rel="nofollow">Real Big Marketing</a>
+				Built by <a href="http://realbigmarketing.com" rel="nofollow">Real Big Marketing</a> | <a
+					href="<?php bloginfo( 'url' ); ?>/about-this-site">About This Site</a>
 
 				<!-- Required for icon use -->
-				<div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a
-						href="http://www.flaticon.com/authors/yannick" title="Yannick">Yannick</a>, <a
-						href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a
-						href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a
-						href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
-				</div>
+				<!--				<div>Icons made by <a href="http://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a>, <a-->
+				<!--						href="http://www.flaticon.com/authors/yannick" title="Yannick">Yannick</a>, <a-->
+				<!--						href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a-->
+				<!--						href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a-->
+				<!--						href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>-->
+				<!--				</div>-->
 			</div>
 		</div>
 	</div>
