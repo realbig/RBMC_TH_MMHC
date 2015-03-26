@@ -29,9 +29,9 @@ class MMHC_Widget_Image extends WP_Widget {
 		// Build the widget
 		parent::__construct(
 			'mmhc_widget_image',
-			'Image',
+			'Parallax Image',
 			array(
-				'description' => 'Shows an image.',
+				'description' => 'Shows an image with a parallax effect.',
 			)
 		);
 	}
@@ -48,9 +48,10 @@ class MMHC_Widget_Image extends WP_Widget {
 		$link = isset( $instance['link'] ) && ! empty( $instance['link'] ) ? $instance['link'] : false;
 
 		if ( $image_ID !== false ) {
-			echo $link !== false ? "<a href=\"$link\">" : '';
-			echo wp_get_attachment_image( $image_ID, 'full' );
-			echo $link !== false ? '</a>' : '';
+			?>
+			<div class="img-holder" data-image="<?php echo wp_get_attachment_image_src( $image_ID, 'full' )[0]; ?>"
+			     data-cover-ratio="0.4"></div>
+			<?php
 		}
 
 		echo $args['after_widget'];

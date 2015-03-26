@@ -1,0 +1,52 @@
+/*
+The static page sidebar.
+
+@since 1.0.0
+*/
+
+@import "../settings";
+
+#site-sidebar {
+  @extend .font-small;
+
+  p, ul {
+    font-size: inherit;
+  }
+
+  .widgets {
+    list-style: none;
+    margin: 0;
+
+    .widget {
+      margin: $gutter 0;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .widget_mmhc_texticon {
+    background: $primary-color;
+    color: $light-color;
+    padding: $gutter / 2;
+    position: relative;
+
+    .widget-title {
+      color: inherit;
+      font-size: 1.2em;
+      text-align: center;
+      margin-bottom: $gutter;
+    }
+
+    .mmhc-widget-icon {
+      position: absolute;
+      top: $gutter / 2;
+      left: $gutter / 2;
+    }
+  }
+}

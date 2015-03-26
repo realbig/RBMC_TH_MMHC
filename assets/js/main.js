@@ -20,4 +20,7 @@
         });
     }
 
+    // Parallax images
+    $('.img-holder').imageScroll();
+
 })(jQuery);

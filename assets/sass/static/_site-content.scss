@@ -1,0 +1,12 @@
+/*
+The static site content.
+
+@since 1.0.0
+*/
+
+@import "../settings";
+
+#site-content {
+  margin-top: $gutter;
+  margin-bottom: $gutter;
+}

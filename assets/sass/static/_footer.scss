@@ -7,4 +7,33 @@ The static site footer.
 @import "../settings";
 
 #site-footer {
+  @extend .font-small;
+
+  .row {
+    padding: $gutter 0;
+  }
+
+  .footer-upper {
+    color: $medium-color;
+
+    .columns:first-of-type {
+      margin-bottom: $gutter / 2;
+    }
+  }
+
+  .footer-lower {
+    background: $dark-color;
+    color: $light-color;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    font-size: inherit;
+
+    .menu-item {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
 }

@@ -35,7 +35,7 @@ define( 'THEME_ID', 'mmhc' );
  * Fonts for the theme. Must be hosted font (Google fonts for example).
  */
 $theme_fonts = array(
-	'pt_sans_oswald' => 'http://fonts.googleapis.com/css?family=PT+Sans|Oswald',
+	'pt_sans_oswald' => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald',
 );
 
 /**
@@ -184,7 +184,7 @@ add_action( 'widgets_init', function () {
 	// Home About
 	register_sidebar( array(
 		'name' => 'Home About Image',
-		'id' => 'home-about',
+		'id' => 'home-about-image',
 		'description' => 'Displays on the home page about us section.',
 		'before_widget' => '',
 		'after_widget' => '',

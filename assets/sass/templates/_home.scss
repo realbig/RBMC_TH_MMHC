@@ -8,9 +8,22 @@ Styles front-page.php, the home page.
 
 body.home {
 
+  #site-content {
+    margin-top: 0;
+  }
+
   .home-section {
-    padding-top: $gutter * 4;
-    padding-bottom: $gutter * 4;
+    padding: ($gutter * 4) $page-gutter;
+
+    @media #{$small-only} {
+      padding-top: $gutter * 2;
+      padding-bottom: $gutter * 2;
+
+      .columns.small-12 {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
   }
 
   // Welcome (CTA)
@@ -19,21 +32,30 @@ body.home {
     color: $light-color;
     position: relative;
 
+    .home-welcome-icon {
+      @media #{$small-only} {
+        margin-bottom: $gutter;
+      }
+    }
+
     .home-welcome-blurb {
       position: relative;
 
+      @media #{$small-only} {
+        top: auto !important;
+      }
+
       .home-welcome-title {
         color: inherit;
-        line-height: 1;
-        font-size: 2em;
+        line-height: 1.2;
+        font-size: 1.5em;
         margin-bottom: 1em;
       }
 
       .home-welcome-copy {
-        font-size: 1.2em;
-
         p {
           font-size: inherit;
+          margin: 0;
         }
       }
     }
@@ -44,16 +66,42 @@ body.home {
     .home-feature-title {
       color: $primary-color;
       margin: 0.5em 0;
+
+      a {
+        @extend .color;
+      }
     }
   }
 
   // About Us
   .home-about {
+    padding-top: $gutter * 2;
+    padding-bottom: $gutter * 2;
     background: $primary-color;
     color: $light-color;
 
+    .home-about-icon {
+      @media #{$small-only} {
+        margin-bottom: $gutter;
+      }
+    }
+
+    .home-about-image {
+      margin-top: $gutter * 2;
+      margin-bottom: $gutter * 2;
+    }
+
     .home-about-title {
       color: inherit;
+      margin: 0;
+    }
+
+    .home-about-content {
+      margin: 0;
+
+      p:last-of-type {
+        margin: 0;
+      }
     }
   }
 }

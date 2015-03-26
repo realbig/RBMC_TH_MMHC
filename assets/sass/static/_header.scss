@@ -3,7 +3,6 @@ The static site header.
 
 @since 1.0.0
 */
-
 @import "../settings";
 @import "../../vendor/sass/foundation/components/forms";
 
@@ -12,14 +11,33 @@ The static site header.
   // Top area
   .header-top {
     padding-top: ($column-gutter / 2);
+    @extend .font-small;
+
+    p {
+      font-size: inherit;
+    }
 
     .left {
       float: left;
+
+      @media #{$small-only} {
+        width: 100%;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+      }
     }
 
     .right {
       float: right;
       text-align: right;
+
+      @media #{$small-only} {
+        margin-top: 10px;
+        width: 100%;
+      }
 
       .line {
         @extend p;
@@ -28,7 +46,10 @@ The static site header.
       }
 
       .top-nav {
-        float: right;
+
+        @media #{$large-up} {
+          float: right;
+        }
 
         .menu {
           list-style: none;
@@ -36,6 +57,7 @@ The static site header.
         }
 
         .menu-item {
+          @extend .font-small;
           display: inline-block;
           margin: 0 5px;
 
@@ -62,7 +84,7 @@ The static site header.
       .phone {
         font-size: 1.5em;
 
-        [class*="mmhcicon"] {
+        [class*="flaticon"] {
           color: $medium-color;
         }
       }
@@ -75,17 +97,141 @@ The static site header.
   background: $secondary-color;
   color: $light-color;
 
+  &.active {
+    .site-nav-toggle {
+      background: $primary-color;
+
+      .text {
+        visibility: hidden;
+        width: 0;
+        opacity: 0;
+      }
+
+      .menu-icon {
+        background: transparent;
+
+        &:before {
+          transform: rotate(45deg);
+          top: 0;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+          bottom: 0;
+        }
+      }
+    }
+
+    .mobile-search {
+      @media #{$small-only} {
+        display: block;
+      }
+    }
+
+    .menu {
+      display: block;
+    }
+  }
+
+  .site-nav-toggle {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5em;
+    padding: ($gutter / 4) 0;
+
+    @media #{$medium-up} {
+      display: none;
+    }
+
+    .text {
+      display: inline-block;
+      visibility: visible;
+      width: 100px;
+      opacity: 1;
+      vertical-align: middle;
+      transition: visibility 300ms, width 300ms, opacity 300ms;
+    }
+
+    .menu-icon-holder {
+      display: inline-block;
+      position: relative;
+      width: 35px;
+      height: 26px;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 35px;
+      height: 6px;
+      margin-left: -17px;
+      background: #fff;
+      transition: background 300ms;
+
+      &:before, &:after {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: #fff;
+        transition: transform 300ms, top 300ms, bottom 300ms;
+      }
+
+      &:before {
+        top: -12px;
+      }
+
+      &:after {
+        bottom: -12px;
+      }
+    }
+  }
+
+  .mobile-search {
+    display: none;
+    padding: 0 $page-gutter;
+    margin: ($gutter / 2) 0;
+
+    input[type="text"] {
+      background: transparent;
+      color: $light-color;
+      border-color: $light-color;
+      border-right-width: 0;
+      box-shadow: none;
+      margin: 0;
+    }
+
+    .postfix {
+      border-color: $light-color;
+      background: transparent;
+      color: $light-color;
+    }
+  }
+
   .menu {
     list-style: none;
     margin: 0;
 
+    @media #{$small-only} {
+      display: none;
+    }
+
     .menu-item {
       float: left;
       line-height: 60px;
-      font-size: 1.5em;
+      font-size: 1.2em;
       background: $secondary-color;
       transition: background 500ms;
       text-align: center;
+
+      @media #{$small-only} {
+        display: block;
+        width: 100% !important;
+        font-size: 1em;
+        line-height: 2;
+      }
 
       &:hover {
         background: darken($secondary-color, 5%);
@@ -96,6 +242,26 @@ The static site header.
         color: inherit;
         display: block;
       }
+    }
+  }
+
+  .mobile-sub-nav {
+    text-align: center;
+    opacity: 0.7;
+
+    @media #{$medium-up} {
+      display: none;
+    }
+
+    .menu {
+      @extend .font-small;
+    }
+
+    .menu-item {
+      float: none;
+      display: inline-block;
+      width: auto !important;
+      margin: 0 5px;
     }
   }
 }

@@ -38,13 +38,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="columns small-12">
 
 				<div class="site-logo left">
-					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png" width="300"
-					     height="95"/>
+					<a href="<?php bloginfo( 'url' ); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/header-logo.png" width="300"
+						     height="95"/>
+					</a>
 				</div>
 
-				<div class="right">
+				<div class="right small-only-text-center">
 
-					<div class="line">
+					<div class="line hide-for-small-only">
 						<div class="search">
 							<?php get_search_form(); ?>
 						</div>
@@ -60,9 +62,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					</div>
 
 					<p class="phone">
-						<?php echo wp_is_mobile() ? '<a href="tel:' . _mmhc_sc_phone() . '">' : ''; ?>
-						<span class="mmhcicon-iphone26"></span><?php echo _mmhc_sc_phone(); ?>
-						<?php echo wp_is_mobile() ? '</a>' : ''; ?>
+						<span class="flaticon-iphone26"></span><?php echo _mmhc_sc_phone(); ?>
 					</p>
 
 					<p class="hours">
@@ -74,12 +74,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</div>
 
 		<nav id="site-nav">
+
+			<div class="site-nav-toggle">
+				<span class="text">
+					MENU
+				</span>
+
+				<span class="menu-icon-holder">
+					<span class="menu-icon"></span>
+				</span>
+			</div>
+
+			<div class="mobile-search">
+				<?php get_search_form(); ?>
+			</div>
+
 			<div class="row">
 				<div class="columns small-12">
 
 					<?php
 					global $_mmhc_primary_nav_count;
-					$primary_nav = wp_get_nav_menu_object( 'primary' );
+					$primary_nav             = wp_get_nav_menu_object( 'primary' );
 					$_mmhc_primary_nav_count = $primary_nav->count;
 
 					require_once __DIR__ . '/includes/primary-nav-walker.php';
@@ -87,10 +102,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 					wp_nav_menu( array(
 						'theme_location' => 'primary',
 						'container'      => false,
-						'walker' => new MMHC_Walker_PrimaryNav,
+						'walker'         => new MMHC_Walker_PrimaryNav,
 					) );
 					?>
 				</div>
+			</div>
+
+			<div class="mobile-sub-nav">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'top',
+					'container'      => false,
+				) );
+				?>
 			</div>
 		</nav>
 

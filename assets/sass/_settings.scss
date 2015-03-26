@@ -20,6 +20,10 @@ $dark-color: #333;
 $medium-color: #aaa;
 $light-color: #fff;
 
+// Base font size
+$base-font-size: 20px;
+$rem-base: $base-font-size;
+
 // We use these to define default font stacks
 $font-family-sans-serif: "PT Sans", sans-serif;
 $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
@@ -40,8 +44,8 @@ $header-bottom-margin: .5rem;
 // We use these to style anchors
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
-$anchor-font-color: $primary-color;
-$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
+$anchor-font-color: $medium-color;
+$anchor-font-color-hover: darken($medium-color, 20%);
 
 // Grid
 $row-width: rem-calc(1000);

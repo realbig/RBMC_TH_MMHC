@@ -46,7 +46,7 @@ class MMHC_Widget_HomeFeature extends WP_Widget {
 			echo $link ? "<a href=\"$link\">" : '';
 			?>
 			<div class="home-feature-icon icon-effect-large">
-				<span class="mmhcicon-<?php echo $instance['icon']; ?>"></span>
+				<span class="flaticon-<?php echo $instance['icon']; ?>"></span>
 			</div>
 			<?php
 			echo ! empty( $instance['link'] ) ? '</a>' : '';

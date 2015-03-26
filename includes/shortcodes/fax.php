@@ -17,6 +17,5 @@ add_action( 'init', function () {
 } );
 
 function _mmhc_sc_fax() {
-
-	return '517.784.9657';
+	return wp_is_mobile() ? '<a href="tel:517.784.9657">517.784.9657</a>' : '517.784.9657';
 }

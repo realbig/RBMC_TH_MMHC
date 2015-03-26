@@ -8,7 +8,7 @@ Version: 1.0.0
 
 // Vendor
 @import "../vendor/css/normalize";
-@import "../vendor/css/icons-mmhc";
+@import "../vendor/css/flaticons";
 
 // Deps
 @import "settings.scss";
@@ -29,6 +29,8 @@ Version: 1.0.0
 // Static
 @import "static/header";
 @import "static/footer";
+@import "static/sidebar";
+@import "static/site-content";
 
 // Templates
 @import "templates/common";

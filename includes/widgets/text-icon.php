@@ -46,14 +46,16 @@ class MMHC_Widget_TextIcon extends WP_Widget {
 
 		if ( ! empty( $instance['icon'] ) ) {
 			?>
-			<span class="mmhcicon-<?php echo $instance['icon']; ?>"></span>
+			<div class="mmhc-widget-icon icon-effect-small-light">
+				<span class="flaticon-<?php echo $instance['icon']; ?>"></span>
+			</div>
 			<?php
 		}
 
 		if ( ! empty( $instance['text'] ) ) {
 			?>
 			<div class="mmhc-widget-text">
-				<?php echo apply_filters( 'the_content', $instance['text'] ); ?>
+				<?php echo wpautop( do_shortcode( $instance['text'] ) ); ?>
 			</div>
 			<?php
 		}

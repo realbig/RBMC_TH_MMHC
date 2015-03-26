@@ -25,13 +25,22 @@ if ( ! empty( $welcome_blurb_copy ) && ! empty( $welcome_blurb_title ) && ! empt
 	<section class="home-section home-welcome">
 
 		<div class="row">
-			<div class="columns small-12 large-4">
-				<span class="home-welcome-icon icon-effect-huge-light vertical-center">
-					<span class="mmhcicon-<?php echo $welcome_blurb_icon; ?>"></span>
-				</span>
+			<div class="columns small-12 medium-4 text-right small-only-text-center">
+
+				<div class="show-for-large-up">
+					<span class="home-welcome-icon icon-effect-huge-light">
+						<span class="flaticon-<?php echo $welcome_blurb_icon; ?>"></span>
+					</span>
+				</div>
+
+				<div class="hide-for-large-up">
+					<span class="home-welcome-icon icon-effect-large-light">
+						<span class="flaticon-<?php echo $welcome_blurb_icon; ?>"></span>
+					</span>
+				</div>
 			</div>
 
-			<div class="home-welcome-blurb columns small-12 large-8">
+			<div class="home-welcome-blurb columns small-12 medium-8">
 				<h1 class="home-welcome-title">
 					<?php echo $welcome_blurb_title; ?>
 				</h1>
@@ -69,7 +78,23 @@ if ( ! empty( $welcome_blurb_copy ) && ! empty( $welcome_blurb_title ) && ! empt
 
 				<h2 class="home-about-title text-center">About Us</h2>
 
-				<?php dynamic_sidebar( 'home-about' ); ?>
+				<div class="home-about-image">
+					<?php dynamic_sidebar( 'home-about-image' ); ?>
+				</div>
+
+				<div class="home-about-content row">
+					<div class="columns small-12 medium-4 text-center medium-text-right">
+						<span class="home-about-icon icon-effect-large-light">
+							<span class="flaticon-<?php echo $about_us_blurb_icon; ?>"></span>
+						</span>
+					</div>
+
+					<div class="home-about-blurb columns small-12 medium-8">
+						<div class="home-about-copy">
+							<?php echo apply_filters( 'the_content', $about_us_blurb_copy ); ?>
+						</div>
+					</div>
+				</div>
 
 			</div>
 		</div>
