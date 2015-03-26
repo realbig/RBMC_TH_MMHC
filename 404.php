@@ -43,7 +43,7 @@ get_header();
 				</p>
 
 				<p>
-					If you are <em>still</em> really confused, you can always give us a call at <?php echo _mmhc_sc_phone(); ?> during our open hours.
+					If you are <em>still</em> really confused, you can always give us a call at <strong><?php echo _mmhc_sc_phone(); ?></strong> during our open hours.
 				</p>
 			</div>
 
