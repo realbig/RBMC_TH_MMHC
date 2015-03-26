@@ -61,8 +61,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</th>
 				<td>
 					<input type="text" name="_mmhc_hours_condensed" id="_mmhc_hours_condensed"
-					       style="max-width: 100%; width: 300px;"
-					       value="<?php echo esc_attr( get_option('_mmhc_hours_condensed') ); ?>" />
+					       style="max-width: 100%; width: 500px;"
+					       value="<?php echo get_option('_mmhc_hours_condensed'); ?>" />
 				</td>
 			</tr>
 
