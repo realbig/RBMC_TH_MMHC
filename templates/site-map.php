@@ -10,7 +10,10 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
+
+get_header();
 ?>
+
 <h2 id="authors">Authors</h2>
 <ul>
 	<?php
@@ -57,3 +60,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	}
 	?>
 </ul>
+
+<?php
+get_footer();
