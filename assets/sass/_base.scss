@@ -16,6 +16,10 @@ a {
 }
 
 // Classes
+.hidden {
+  display: none !important;
+}
+
 .font-small {
   font-size: 0.8em;
 }

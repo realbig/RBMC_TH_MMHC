@@ -13,6 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Require files
 require_once __DIR__ . '/extra-meta/home.php';
+require_once __DIR__ . '/pages/mmhc-general.php';
 
 /**
  * Easy way to register a new post type!

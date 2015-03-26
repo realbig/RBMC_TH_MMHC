@@ -17,6 +17,5 @@ add_action( 'init', function () {
 } );
 
 function _mmhc_sc_hours_condensed() {
-
-	return '<strong>Office / Lab Hours:</strong> 9am - 5pm | M - F';
+	return get_option( '_mmhc_hours_condensed', '' );
 }

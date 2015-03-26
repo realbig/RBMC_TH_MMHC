@@ -17,10 +17,5 @@ add_action( 'init', function () {
 } );
 
 function _mmhc_sc_hours_lab() {
-
-	$html = '<strong>Lab Hours:</strong><br/>';
-	$html .= 'Monday - Friday<br/>';
-	$html .= '9:00am - 5:00pm';
-
-	return $html;
+	return wpautop( do_shortcode( get_option( '_mmhc_hours_lab', '' ) ) );
 }

@@ -17,11 +17,5 @@ add_action( 'init', function () {
 } );
 
 function _mmhc_sc_hours_office() {
-
-	$html = '<strong>Office Hours:</strong><br/>';
-	$html .= 'Monday - Friday<br/>';
-	$html .= '9:00am - 5:00pm<br/>';
-	$html .= '<em>(same day appointments available)</em>';
-
-	return $html;
+	return wpautop( do_shortcode( get_option( '_mmhc_hours_office', '' ) ) );
 }

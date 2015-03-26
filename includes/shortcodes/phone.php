@@ -17,5 +17,7 @@ add_action( 'init', function () {
 } );
 
 function _mmhc_sc_phone() {
-	return wp_is_mobile() ? '<a href="tel:517.784.9189">517.784.9189</a>' : '517.784.9189';
+
+	$phone = get_option( '_mmhc_phone', '' );
+	return wp_is_mobile() ? "<a href=\"tel:$phone\">$phone</a>" : $phone;
 }

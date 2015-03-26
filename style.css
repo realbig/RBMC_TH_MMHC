@@ -3291,6 +3291,9 @@ a.color, body.home .home-features .home-feature-title a {
   a.color:hover, body.home .home-features .home-feature-title a:hover {
     color: #6699cc; }
 
+.hidden {
+  display: none !important; }
+
 .font-small, #site-header .header-top, #site-header .header-top .right .top-nav .menu-item, #site-nav .mobile-sub-nav .menu, #site-footer, #site-sidebar {
   font-size: 0.8em; }
 
