@@ -43,14 +43,14 @@ $theme_fonts = array(
  *
  * @since 1.0.0
  */
-add_action( 'after_setup_theme', function() {
+add_action( 'after_setup_theme', function () {
 
 	// Add theme support
 	require_once __DIR__ . '/includes/theme-support.php';
 
 	// Allow shortcodes in text widget
-	add_filter('widget_text', 'do_shortcode');
-});
+	add_filter( 'widget_text', 'do_shortcode' );
+} );
 
 /**
  * Register theme files.
@@ -168,30 +168,71 @@ add_action( 'widgets_init', function () {
 
 	// Page
 	register_sidebar( array(
-		'name' => 'Page',
-		'id' => 'page',
-		'description' => 'Displays on all pages.',
+		'name'         => 'Page',
+		'id'           => 'page',
+		'description'  => 'Displays on all pages.',
 		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	));
+		'after_title'  => '</h3>',
+	) );
 
 	// Home Features
 	register_sidebar( array(
-		'name' => 'Home Features',
-		'id' => 'home-features',
+		'name'        => 'Home Features',
+		'id'          => 'home-features',
 		'description' => 'Displays on the home page.',
-	));
+	) );
 
 	// Home About
 	register_sidebar( array(
-		'name' => 'Home About Image',
-		'id' => 'home-about-image',
-		'description' => 'Displays on the home page about us section.',
+		'name'          => 'Home About Image',
+		'id'            => 'home-about-image',
+		'description'   => 'Displays on the home page about us section.',
 		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
-	));
+		'after_widget'  => '',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+} );
+
+/**
+ * Favicons.
+ *
+ * @since 1.0.0
+ */
+add_action( 'wp_head', function () {
+	?>
+	<link rel="apple-touch-icon" sizes="57x57"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/android-chrome-192x192.png"
+	      sizes="192x192">
+	<link rel="icon" type="image/png"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png"
+	      href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicons/manifest.json">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+<?php
 } );
 
 // Include other static files
@@ -208,3 +249,4 @@ require_once __DIR__ . '/includes/shortcodes/hours-lab.php';
 require_once __DIR__ . '/includes/shortcodes/hours-condensed.php';
 require_once __DIR__ . '/includes/shortcodes/phone.php';
 require_once __DIR__ . '/includes/shortcodes/fax.php';
+require_once __DIR__ . '/includes/shortcodes/button.php';
